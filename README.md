@@ -195,3 +195,37 @@ ii. Leverage multiversion concurrency control (MVCC) to allow multiple transacti
 #### f. Unique Constraints
 i. Enforce database constraints (e.g., unique transaction IDs) to prevent duplicate transactions.
 
+
+
+
+#PRACTICAL TASK
+## 1. Optimize the following SQL query for a microfinance bank's customer records:
+SELECT * FROM transactions WHERE customer_id = '12345' ORDER BY date DESC;
+
+At first glance, this is a straight forward query, but there are ways to optimize it for better design:
+### 1. Identify the Needed Columns: This would only retrieve necessary data, reduce data transfer and improve query speed.
+
+Example:
+SELECT transaction_id, amount, transaction_type, date 
+FROM transactions 
+WHERE customer_id = '12345' 
+ORDER BY date DESC;
+
+
+### 2. Consider Indexing: This allows the database to quickly locate rows with the specified customer_id, significantly speeding up the WHERE clause execution. Without an index, the database would need to scan the entire table to find matching records, which can be extremely slow for large datasets.
+
+Example:
+CREATE INDEX idx_customer_id ON transactions (customer_id);
+
+
+### 3. Limit the Result Set:If you only need to retrieve the most recent transactions, use the LIMIT clause to restrict the number of rows returned.
+
+Example:
+SELECT transaction_id, amount, transaction_type, date 
+FROM transactions 
+WHERE customer_id = '12345' 
+ORDER BY date DESC 
+LIMIT 100;
+
+
+
