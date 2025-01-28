@@ -80,3 +80,118 @@ Failure to comply with regulations like GDPR, PCI-DSS, or CCPA, leading to legal
 Accidental or malicious alteration or deletion of sensitive data.
 ### h. Third-Party Risks
 Vulnerabilities in third-party services or vendors that handle sensitive data.
+
+
+
+
+
+
+# Backend Development Theoretical Questions
+
+## 1. Explain the importance of ACID properties in financial applications and how they apply to databases.
+
+ACID stands for:
+
+A	-	Atomicity, 
+C	-	Consistency, 
+I	-	Isolation, 
+D	-	Durability
+
+
+### These are fundamental principles for database transactions, ensuring data integrity and reliability. 
+Some importance of ACID are:
+
+i.   Data Integrity: Prevents errors like double-charging or lost transactions.
+ii.  Trust: Users rely on financial systems for accurate and reliable results.
+iii. Compliance: Meets regulatory standards for secure and reliable data handling.
+iv.  Scalability: Maintains accuracy even as transaction volumes increase.
+
+
+
+### How they affect financial databases:
+
+Atomicity: Ensures transactions are all-or-nothing, preventing partial updates (e.g., both debit and credit must either succeed or fail).
+Consistency: Maintains valid database states by enforcing rules like no negative balances.
+Isolation: Ensures concurrent transactions don’t interfere, avoiding data conflicts.
+Durability: Guarantees committed transactions are permanent, even after system failures.
+
+
+
+
+## 2. What is the role of encryption in securing bank transactions?
+
+i.   Data Protection During Transmission
+ii.  Prevents Data Interception
+iii. Ensures Data Integrity
+iv.  Secure Storage of Sensitive Information
+v.   Authentication and Authorization
+vi.  Compliance with Regulations
+
+
+
+
+## 3. Describe how you would implement a secure login system using JWT tokens.
+
+
+### a. User Login
+
+i.   The user enters their username and password.
+ii.  The system checks the credentials. If correct, a JWT (JSON Web Token) is created.
+
+
+### b. Token Generation
+
+i.   The server generates a JWT token, which is a string that contains encrypted information (like the user's ID and roles).
+ii.  This token is sent back to the user.
+
+
+### c. Token Storage
+i. The user’s app (web or mobile) stores the token (usually in localStorage or cookies).
+
+
+### d. Using the Token
+i. For every future request, the user sends the JWT token along with the request.
+ii. The server checks the token to verify the user’s identity before granting access.
+
+### e. Token Expiry and Refresh
+i. The token has an expiration time to enhance security. If the token expires, the user needs to log in again or use a refresh token to get a new one.
+
+
+
+
+
+## 4. How would you handle concurrent transactions to prevent double spending or data inconsistencies?
+
+### Definitions:
+Concurrent transactions occur when multiple transactions are executed simultaneously in a database system. This is common in multi-user systems where many operations, such as withdrawals, deposits, or updates, are performed at the same time.
+
+Double spending happens when the same funds are used more than once for transactions due to improper handling of concurrency.
+Errors in database states caused by transactions interfering with each other.
+
+
+### Handling Concurrent Transactions
+
+#### a. Use of Database Isolation Levels
+Implement appropriate isolation levels to manage concurrent access:
+i. Repeatable Read: Prevents modifications to data being read by a transaction until it’s complete, avoiding double spending.
+ii. Read Committed: Ensures only committed data is read, reducing dirty reads.
+
+#### b. Optimistic Locking
+i. Check if the data has changed since it was read by the transaction (using a version number or timestamp) before applying updates.
+ii. Prevents overwriting changes made by another transaction.
+
+#### c. Pessimistic Locking
+
+i. Lock records or rows being used by a transaction to prevent others from accessing or modifying them until the transaction completes.
+ii. Suitable for high-risk operations like fund transfers.
+
+#### d. Atomic Operations
+i. Use atomic database transactions to ensure multiple operations (e.g., debit and credit) are processed as a single unit.
+
+#### e. Concurrency Control Mechanisms
+i. Use two-phase commit (2PC) for distributed transactions to maintain consistency across multiple systems.
+ii. Leverage multiversion concurrency control (MVCC) to allow multiple transactions while maintaining data consistency.
+
+#### f. Unique Constraints
+i. Enforce database constraints (e.g., unique transaction IDs) to prevent duplicate transactions.
+
