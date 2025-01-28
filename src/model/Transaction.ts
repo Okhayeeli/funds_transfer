@@ -1,4 +1,4 @@
-// src/models/Transaction.ts
+
 import { DataTypes, Model } from 'sequelize';
 import sequelize from '../config/db';
 
@@ -17,12 +17,12 @@ Transaction.init(
     amount: {
       type: DataTypes.FLOAT,
       allowNull: false,
-      validate: { min: 100 }, // Minimum transfer amount is 1
+      validate: { min: 100 }, 
     },
     referenceId: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true, // Prevent duplicate transactions
+      unique: true, 
     },
   },
   { sequelize, modelName: 'Transaction' }
