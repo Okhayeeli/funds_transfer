@@ -1,6 +1,6 @@
 # GENERAL KNOWLEDGE QUESTIONS
 
-1. ## What are the key security considerations when developing financial applications?
+## 1. What are the key security considerations when developing financial applications?
 
 Some key considerations when developing financial applications are as follows:
 
@@ -17,12 +17,12 @@ e. Monitoring and Logging: Monitor system activity for unusual behavior and anal
 
 
 
-2. ## Describe the importance of compliance standards such as PCI-DSS and GDPR in financial applications.
+## 2. Describe the importance of compliance standards such as PCI-DSS and GDPR in financial applications.
 
-   i.  PCI-DSS:	Payment Card Industry Data Security Standard
-   ii. GDPR:	General Data Protection Regulation
+i.  PCI-DSS:	Payment Card Industry Data Security Standard
+ii. GDPR:	General Data Protection Regulation
 
-   Some importances of the two compliance standards above are:
+Some importances of the two compliance standards above are:
 
 ### Protecting Sensitive Data: 
    Ensures secure handling of payment card details (PCI-DSS) and personal data (GDPR) to prevent breaches and fraud.
@@ -52,12 +52,12 @@ Encourages secure development practices and continuous monitoring to prevent vul
 
 
 
-3. ## Explain the concept of "idempotency" in financial transactions and why it's crucial.
+## 3. Explain the concept of "idempotency" in financial transactions and why it's crucial.
 
    In computing and API design, idempotency means that repeating the same operation multiple times will produce the same result as doing it once. This is especially important in financial systems - if a payment request gets sent twice due to a network glitch or retry attempt, you want to ensure the customer only gets charged once, not multiple times.
 
 
-4. ## Potential Risks of handling sensitive customer data
+## 4. Potential Risks of handling sensitive customer data
 
 ### Data Breaches
    i. Unauthorized access to sensitive data (e.g., ATM numbers, User Login Password) due to weak security measures.
