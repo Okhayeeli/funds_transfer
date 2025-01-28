@@ -4,15 +4,20 @@
 
 Some key considerations when developing financial applications are as follows:
 
-a. Data Encryption: Protect sensitive data both at rest (stored on servers) and in transit (moving between systems) using strong encryption algorithms.
+### a. Data Encryption: 
+Protect sensitive data both at rest (stored on servers) and in transit (moving between systems) using strong encryption algorithms.
 
-b. Authentication and Authorization: Verify user identity (authentication) and control their access to specific features and data (authorization). Implement multi-factor authentication and least privilege principles.
+### b. Authentication and Authorization: 
+Verify user identity (authentication) and control their access to specific features and data (authorization). Implement multi-factor authentication and least privilege principles.
 
-c. Input Validation and Sanitization: Carefully examine and clean user inputs to prevent attacks like SQL injection and cross-site scripting.
+### c. Input Validation and Sanitization: 
+Carefully examine and clean user inputs to prevent attacks like SQL injection and cross-site scripting.
 
-d. Secure Coding Practices: Follow secure coding guidelines and conduct regular code reviews to identify and fix vulnerabilities.
+### d. Secure Coding Practices: 
+Follow secure coding guidelines and conduct regular code reviews to identify and fix vulnerabilities.
 
-e. Monitoring and Logging: Monitor system activity for unusual behavior and analyze logs to detect and respond to security incidents.
+### e. Monitoring and Logging: 
+Monitor system activity for unusual behavior and analyze logs to detect and respond to security incidents.
 
 
 
