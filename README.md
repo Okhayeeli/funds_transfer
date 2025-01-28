@@ -24,29 +24,29 @@ e. Monitoring and Logging: Monitor system activity for unusual behavior and anal
 
    Some importances of the two compliance standards above are:
 
-## Protecting Sensitive Data: 
+### Protecting Sensitive Data: 
    Ensures secure handling of payment card details (PCI-DSS) and personal data (GDPR) to prevent breaches and fraud.
 
-## Building Customer Trust
+### Building Customer Trust
    Shows users their data is handled responsibly, fostering confidence in the application.
 
-## Avoiding Financial Penalties
+### Avoiding Financial Penalties
    Non-compliance can lead to heavy fines
 
-## Legal and Regulatory Obligations
+### Legal and Regulatory Obligations
    Ensures the application adheres to global and local laws for data security and privacy.
 
-## Reducing Data Breach Risks
+### Reducing Data Breach Risks
    Implements strong security measures like encryption, access control, and breach notifications.
 
-## Enhancing System Security
+### Enhancing System Security
 Encourages secure development practices and continuous monitoring to prevent vulnerabilities.
 
-## Global Interoperability
+### Global Interoperability
    Compliance ensures the app can operate legally across borders, especially in the EU and with global payment 
    systems.
 
-## Competitive Advantage
+### Competitive Advantage
    Demonstrates reliability and security, attracting more users and businesses.
 
 
@@ -59,19 +59,19 @@ Encourages secure development practices and continuous monitoring to prevent vul
 
 4. # Potential Risks of handling sensitive customer data
 
-## Data Breaches
+### Data Breaches
    i. Unauthorized access to sensitive data (e.g., ATM numbers, User Login Password) due to weak security measures.
-## Data Leakage
+### Data Leakage
    i. Accidental exposure of sensitive data through misconfigured databases, APIs, or logging systems.
-## Insider Threats
+### Insider Threats
    i. Malicious or negligent actions by employees or contractors with access to sensitive data.
-## Phishing and Social Engineering
+### Phishing and Social Engineering
    i. Attackers tricking employees or customers into revealing sensitive information.
-## Insecure APIs
+### Insecure APIs
    i. Exploitation of vulnerabilities in APIs to gain unauthorized access to data.
-## Compliance Violations
+### Compliance Violations
    i. Failure to comply with regulations like GDPR, PCI-DSS, or CCPA, leading to legal penalties and loss of trust.
-## Data Corruption or Loss
+### Data Corruption or Loss
    i. Accidental or malicious alteration or deletion of sensitive data.
-## Third-Party Risks
+### Third-Party Risks
    i. Vulnerabilities in third-party services or vendors that handle sensitive data.
