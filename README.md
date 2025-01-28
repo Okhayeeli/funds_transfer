@@ -24,7 +24,7 @@ ii. GDPR:	General Data Protection Regulation
 
 Some importances of the two compliance standards above are:
 
-### Protecting Sensitive Data: 
+### a.  Protecting Sensitive Data: 
    Ensures secure handling of payment card details (PCI-DSS) and personal data (GDPR) to prevent breaches and fraud.
 
 ### Building Customer Trust
