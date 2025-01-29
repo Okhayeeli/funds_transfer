@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router, Request, Response } from 'express';
 import { AccountController } from '../controllers/AccountController';
 import { transferValidationRules, validateTransfer } from '../middlewares/validateTransfer';
 import { checkDuplicateTransaction } from '../middlewares/duplicateTransactionCheck';
@@ -14,6 +14,16 @@ router.post(
   (req, res) => accountController.transferFunds(req, res)
 );
 
-router.get('/balance', async (req, res) => await accountController.getBalance(req, res));
+router.get('/balance', (req, res) => accountController.getBalance(req, res));
+
+router.get(
+  '/transactions/:accountNumber',
+  (req, res) => accountController.getTransactionHistory(req, res)
+);
+
+router.get(
+  '/transactions/details/:transactionId',
+  (req: Request, res: Response) => accountController.getTransactionDetails(req, res)
+);
 
 export default router;

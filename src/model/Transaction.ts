@@ -1,31 +1,75 @@
+import { Model, DataTypes } from 'sequelize';
+import { sequelize } from '../config/db';
 
-import { DataTypes, Model } from 'sequelize';
-import sequelize from '../config/db';
-
-export class Transaction extends Model {
+class Transaction extends Model {
   public id!: number;
-  public fromAccount!: string;
-  public toAccount!: string;
+  public fromAccountId!: number;
+  public toAccountId!: number;
+  public fromAccountNumber!: string;
+  public toAccountNumber!: string;
   public amount!: number;
-  public referenceId!: string;
+  public type!: string;
+  public status!: string;
+  public reference!: string;
+  public description?: string;
+  public readonly createdAt!: Date;
 }
 
 Transaction.init(
   {
-    fromAccount: { type: DataTypes.STRING(10), allowNull: false },
-    toAccount: { type: DataTypes.STRING(10), allowNull: false },
-    amount: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-      validate: { min: 100 }, 
+    id: {
+      type: DataTypes.BIGINT,
+      autoIncrement: true,
+      primaryKey: true,
     },
-    referenceId: {
+    fromAccountId: {
+      type: DataTypes.BIGINT,
+      allowNull: false,
+    },
+    toAccountId: {
+      type: DataTypes.BIGINT,
+      allowNull: false,
+    },
+    fromAccountNumber: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true, 
+    },
+    toAccountNumber: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    amount: {
+      type: DataTypes.DECIMAL(10, 2),
+      allowNull: false,
+    },
+    type: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    status: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    reference: {
+      type: DataTypes.STRING,
+      unique: true,
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.STRING,
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
   },
-  { sequelize, modelName: 'Transaction' }
+  {
+    sequelize,
+    tableName: 'transactions',
+    timestamps: true,
+    updatedAt: false,
+  }
 );
 
 export default Transaction;

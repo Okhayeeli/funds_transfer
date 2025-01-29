@@ -28,6 +28,7 @@
     "save-dev": "^0.0.1-security",
     "sequelize": "^6.37.5",
     "sequelize-typescript": "^2.1.6",
+    "uuid": "^11.0.5",
     "winston": "^3.17.0"
   },
   "devDependencies": {
